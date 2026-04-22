@@ -1,0 +1,23 @@
+[
+  {
+    "query": "How do I add a background task in FastAPI?",
+    "relevant_texts": [
+      "BackgroundTasks",
+      "background_tasks.add_task"
+    ]
+  },
+  {
+    "query": "How do I create a dependency in FastAPI?",
+    "relevant_texts": [
+      "Depends",
+      "dependency injection"
+    ]
+  },
+  {
+    "query": "How do I handle file uploads in FastAPI?",
+    "relevant_texts": [
+      "UploadFile",
+      "File("
+    ]
+  }
+]

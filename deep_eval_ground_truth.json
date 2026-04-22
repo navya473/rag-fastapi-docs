@@ -1,0 +1,14 @@
+[
+  {
+    "question": "How do I add a background task in FastAPI?",
+    "ground_truth": "Use the BackgroundTasks parameter in your path operation function. Call background_tasks.add_task() with the function and its arguments. FastAPI will run the task after returning the response."
+  },
+  {
+    "question": "How do I create a dependency in FastAPI?",
+    "ground_truth": "Define a function and use it as a type annotation with Depends(). FastAPI will call the dependency function and inject its return value into your path operation."
+  },
+  {
+    "question": "How do I handle file uploads in FastAPI?",
+    "ground_truth": "Use the UploadFile type annotation with File() as the default value. You can then read the file contents using await file.read()."
+  }
+]

@@ -1,0 +1,17 @@
+# Pinecone & Hybrid Search
+pinecone==8.1.2
+pinecone-text==0.11.0
+
+# LLM & Agents
+langgraph==1.1.6
+langchain==1.2.15
+langchain-google-genai==4.2.2
+langchain-groq==1.1.2
+
+# Embeddings & Processing
+sentence-transformers==5.4.0
+pydantic==2.11.7
+numpy==1.26.4
+
+# Utilities
+python-dotenv==1.2.2

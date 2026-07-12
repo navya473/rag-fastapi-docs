@@ -144,3 +144,19 @@ RERANKER=cross-encoder   # ms-marco-MiniLM-L-6-v2 (local, free)
 ```
 
 ---
+
+## Testing
+
+The test suite validates the text-chunking strategies, retrieval logic, and metadata consistency using `pytest`.
+
+To run the unit and integration tests completely offline (disabling active LangChain/LangSmith tracing plugins):
+
+```bash
+LANGCHAIN_TRACING_V2=false pytest test_rag.py -p no:langsmith -p no:anyio
+---
+
+## Deployment
+
+### Run FastAPI
+
+uvicorn api:app --host 0.0.0.0 --port 8000

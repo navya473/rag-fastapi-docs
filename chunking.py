@@ -80,7 +80,11 @@ def paragraph_chunk(text: str, metadata: dict | None = None) -> list[Chunk]:
                 chunks.append(Chunk(text=buffer, metadata={**meta, "strategy": "paragraph"}))
             # if para itself is too long, recurse with recursive splitter
             if len(para) > CHUNK_SIZE:
-                chunks.extend(recursive_chunk(para, {**meta, "strategy": "paragraph"}))
+                # chunks.extend(recursive_chunk(para, {**meta, "strategy": "paragraph"}))
+                sub_chunks = recursive_chunk(para, meta)
+                for sc in sub_chunks:
+                    sc.metadata["strategy"] = "paragraph"
+                chunks.extend(sub_chunks)
                 buffer = ""
             else:
                 buffer = para

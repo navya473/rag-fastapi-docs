@@ -1,6 +1,6 @@
 # RAG — FastAPI Docs Q&A
 
-A production-grade Retrieval-Augmented Generation system with an
+A Retrieval-Augmented Generation system with a
 hybrid Pinecone search, Cohere reranking, and full
 evaluation tooling.
 
@@ -10,7 +10,7 @@ evaluation tooling.
 ## Architecture
 
 ```
-RAG/
+rag-fastapi-docs/
 ├── data/                  # Raw PDFs / Markdown (FastAPI docs)
 ├── .env.example           # API keys
 ├── chunking.py            # recursive | paragraph | semantic
@@ -119,7 +119,7 @@ Edit `retrieval_ground_truth.json`:
 
 ```bash
 # Uses deep_eval_ground_truth.json
-python -m eval_ragas
+python -m deep_eval
 ```
 
 Edit `deep_eval_ground_truth.json`:
@@ -153,10 +153,14 @@ To run the unit and integration tests completely offline (disabling active LangC
 
 ```bash
 LANGCHAIN_TRACING_V2=false pytest test_rag.py -p no:langsmith -p no:anyio
+```
+
 ---
 
 ## Deployment
 
 ### Run FastAPI
 
+```bash
 uvicorn api:app --host 0.0.0.0 --port 8000
+```
